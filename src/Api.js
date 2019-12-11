@@ -184,7 +184,8 @@ class Api {
         recents[i] = bytes / (interval / 1000); // add most recent bytes/second
 
         if (this.verbose) {
-          console.log(`Current speed: ${this.unit(this.constructor.average(recents))} ${this.unit.name}`);
+           var currentSpeed = ` ${this.unit(this.constructor.average(recents))}`
+           document.getElementById("fidelity").innerHTML = (currentSpeed.slice(0,6) + " "  + `${this.unit.name}`);
         }
 
         bytes = 0;// reset bytes count
