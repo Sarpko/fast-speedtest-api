@@ -185,7 +185,10 @@ class Api {
 
         if (this.verbose) {
            var currentSpeed = ` ${this.unit(this.constructor.average(recents))}`
-           document.getElementById("fidelity").innerHTML = (currentSpeed.slice(0,6) + " "  + `${this.unit.name}`);
+           var instantSpeed = currentSpeed.slice(0,6) + " "  + `${this.unit.name}`
+           var instantSpeedBar = currentSpeed.slice(0,6)
+           module.exports.lastSpeed = instantSpeed;
+           module.exports.lastSpeedBar = instantSpeedBar;
         }
 
         bytes = 0;// reset bytes count
